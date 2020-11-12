@@ -8,3 +8,14 @@ C:\Users\opilane\source\repos\redactor_valjataga\redactor_valjataga\obj\Debug\re
 C:\Users\opilane\source\repos\redactor_valjataga\redactor_valjataga\obj\Debug\redactor_valjataga.csproj.CoreCompileInputs.cache
 C:\Users\opilane\source\repos\redactor_valjataga\redactor_valjataga\obj\Debug\redactor_valjataga.exe
 C:\Users\opilane\source\repos\redactor_valjataga\redactor_valjataga\obj\Debug\redactor_valjataga.pdb
+C:\Users\Admin\Source\Repos\labaratorRedactor\redactor_valjataga\bin\Debug\redactor_valjataga.exe.config
+C:\Users\Admin\Source\Repos\labaratorRedactor\redactor_valjataga\bin\Debug\redactor_valjataga.exe
+C:\Users\Admin\Source\Repos\labaratorRedactor\redactor_valjataga\bin\Debug\redactor_valjataga.pdb
+C:\Users\Admin\Source\Repos\labaratorRedactor\redactor_valjataga\obj\Debug\redactor_valjataga.csprojAssemblyReference.cache
+C:\Users\Admin\Source\Repos\labaratorRedactor\redactor_valjataga\obj\Debug\redactor_valjataga.Form1.resources
+C:\Users\Admin\Source\Repos\labaratorRedactor\redactor_valjataga\obj\Debug\redactor_valjataga.Properties.Resources.resources
+C:\Users\Admin\Source\Repos\labaratorRedactor\redactor_valjataga\obj\Debug\redactor_valjataga.csproj.GenerateResource.cache
+C:\Users\Admin\Source\Repos\labaratorRedactor\redactor_valjataga\obj\Debug\redactor_valjataga.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Source\Repos\labaratorRedactor\redactor_valjataga\obj\Debug\redactor_valjataga.exe
+C:\Users\Admin\Source\Repos\labaratorRedactor\redactor_valjataga\obj\Debug\redactor_valjataga.pdb
+C:\Users\Admin\Source\Repos\labaratorRedactor\redactor_valjataga\obj\Debug\redactor_valjataga.Form2.resources

@@ -32,8 +32,8 @@ namespace redactor_valjataga
         public Form1()
         {
             InitializeComponent();
-            drawing = false;
-            currentPen = new Pen(Color.Black);
+            drawing = false; //переменная, отвественная за рисование
+            currentPen = new Pen(Color.Black);// Инициализация пера с чёрным цветом
             currentPen.Width = trackBar1.Value;
             picDrawingSurface.MouseDown += PicDrawingSurface_MouseDown1;
             picDrawingSurface.MouseUp += PicDrawingSurface_MouseUp;
@@ -47,7 +47,7 @@ namespace redactor_valjataga
 
         private void PicDrawingSurface_MouseMove(object sender, MouseEventArgs e)
         {
-            label1.Text = "x= " + e.X.ToString() + ", y= " + e.Y.ToString();
+            
             if (drawing)
             {
                 if (figuri == 0)
@@ -61,16 +61,7 @@ namespace redactor_valjataga
                     picDrawingSurface.Invalidate();
 
                 }
-                else
-                {
-                    X = oldLocation.X;
-                    Y = oldLocation.Y;
-                    XO = e.Location.X - oldLocation.X;
-                    YO = e.Location.Y - oldLocation.Y;
-                }
-
-
-
+                
 
             }
 
@@ -169,10 +160,7 @@ namespace redactor_valjataga
         {
             currentPen.Width = trackBar1.Value;
         }
-        private void TrackBar2_Scroll(object sender, EventArgs e)
-        {
-            picDrawingSurface.Image = Zoom(imgOriginal, trackBar2.Value);
-        }
+        
 
         private Image Zoom(Image img, int size)
         {
@@ -278,5 +266,168 @@ namespace redactor_valjataga
 
             }
         }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog SaveDlg = new SaveFileDialog();
+            SaveDlg.Filter = "JPEG Image|*.jpg|Bitmap Image|*.bmp|GIF Image|*.gif|PNG Image|*.png";
+            SaveDlg.Title = "Save an Image File";
+            SaveDlg.FilterIndex = 4;
+
+            SaveDlg.ShowDialog();
+            if (SaveDlg.FileName != "")
+            {
+                System.IO.FileStream fsу = (System.IO.FileStream)SaveDlg.OpenFile();
+
+                switch (SaveDlg.FilterIndex)
+                {
+                    case 1:
+                        this.picDrawingSurface.Image.Save(fsу, ImageFormat.Jpeg);
+                        break;
+
+                    case 2:
+                        this.picDrawingSurface.Image.Save(fsу, ImageFormat.Bmp);
+                        break;
+                    case 3:
+                        this.picDrawingSurface.Image.Save(fsу, ImageFormat.Gif);
+                        break;
+                    case 4:
+                        this.picDrawingSurface.Image.Save(fsу, ImageFormat.Png);
+                        break;
+                }
+
+                fsу.Close();
+            }
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OP = new OpenFileDialog();
+            OP.Filter = "JPEG Image|*.jpg|Bitmap Image|*.bmp|GIF Image|*.gif|PNG Image|*.png";
+            OP.Title = "Open an Image File";
+            OP.FilterIndex = 1;
+
+            if (OP.ShowDialog() != DialogResult.Cancel)
+                picDrawingSurface.Load(OP.FileName);
+
+            picDrawingSurface.AutoSize = true;
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Owner = this;
+            f.ShowDialog();
+        }
+        
+     
+
+        
+
+        private void trackBar2_Scroll_1(object sender, EventArgs e)
+        {
+            picDrawingSurface.Image = Zoom(imgOriginal, trackBar2.Value);
+        }
+        
+        private void squareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPen.DashStyle = DashStyle.Solid;
+
+            solidToolStripMenuItem.Checked = false;
+            dotToolStripMenuItem.Checked = false;
+            dashDotDotToolStripMenuItem.Checked = true;
+            figuri = 1;
+        }
+
+        private void straightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPen.DashStyle = DashStyle.Solid;
+
+            solidToolStripMenuItem.Checked = false;
+            dotToolStripMenuItem.Checked = false;
+            dashDotDotToolStripMenuItem.Checked = true;
+            figuri = 2;
+        }
+
+        private void penToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            currentPen.DashStyle = DashStyle.Solid;
+
+            solidToolStripMenuItem.Checked = true;
+            dotToolStripMenuItem.Checked = false;
+            dashDotDotToolStripMenuItem.Checked = false;
+
+            figuri = 0;
+        }
+
+        private void toolStripMenuItem9_Click(object sender, EventArgs e)
+        {
+            currentPen.DashStyle = DashStyle.Solid;
+
+            solidToolStripMenuItem.Checked = true;
+            dotToolStripMenuItem.Checked = false;
+            dashDotDotToolStripMenuItem.Checked = false;
+
+
+            figuri = 4;
+        }
+        
+
+        private void trackBar1_Scroll_1(object sender, EventArgs e)
+        {
+            currentPen.Width = trackBar1.Value;
+        }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (History.Count != 0 && historyCounter != 0)
+            {
+                picDrawingSurface.Image = new Bitmap(History[--historyCounter]);
+            }
+            else MessageBox.Show("История пуста");
+        }
+
+        private void renoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (historyCounter < History.Count - 1)
+            {
+                picDrawingSurface.Image = new Bitmap(History[++historyCounter]);
+            }
+            else MessageBox.Show("История пуста");
+        }
+
+        private void colorToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Owner = this;
+            f.ShowDialog();
+        }
+        
+        private void solidToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPen.DashStyle = DashStyle.Solid;
+
+            solidToolStripMenuItem.Checked = true;
+            dotToolStripMenuItem.Checked = false;
+            dashDotDotToolStripMenuItem.Checked = false;
+        }
+
+        private void dotToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPen.DashStyle = DashStyle.Dot;
+
+            solidToolStripMenuItem.Checked = false;
+            dotToolStripMenuItem.Checked = true;
+            dashDotDotToolStripMenuItem.Checked = false;
+        }
+
+        private void dashDotDotToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            currentPen.DashStyle = DashStyle.DashDotDot;
+
+            solidToolStripMenuItem.Checked = false;
+            dotToolStripMenuItem.Checked = false;
+            dashDotDotToolStripMenuItem.Checked = true;
+        }*/
     }
 }
