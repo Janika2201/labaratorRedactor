@@ -31,40 +31,43 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.renoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.penToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
-            this.squareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.straightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.penToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.picDrawingSurface = new System.Windows.Forms.PictureBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.penToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.styleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solidToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashDotDotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.styleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.squareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.straightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.penToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -94,6 +97,158 @@
             this.toolStripSeparator2.AutoSize = false;
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(108, 20);
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem6,
+            this.toolStripMenuItem7,
+            this.toolStripMenuItem8});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(832, 24);
+            this.menuStrip2.TabIndex = 7;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.openToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.exitToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.toolStripMenuItem1.Text = "File";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(138, 6);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.undoToolStripMenuItem,
+            this.renoToolStripMenuItem,
+            this.penToolStripMenuItem});
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(39, 20);
+            this.toolStripMenuItem6.Text = "Edit";
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(44, 20);
+            this.toolStripMenuItem7.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.squareToolStripMenuItem,
+            this.straightToolStripMenuItem,
+            this.penToolStripMenuItem1,
+            this.toolStripMenuItem9});
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(57, 20);
+            this.toolStripMenuItem8.Text = "Figures";
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(110, 22);
+            this.toolStripMenuItem9.Tag = "";
+            this.toolStripMenuItem9.Text = "Fill";
+            this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.trackBar2);
+            this.panel1.Controls.Add(this.trackBar1);
+            this.panel1.Location = new System.Drawing.Point(114, 446);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(695, 72);
+            this.panel1.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.label3.Location = new System.Drawing.Point(259, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Лупа";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(322, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.label2.Location = new System.Drawing.Point(467, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Размер кисти";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "...";
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(186, 3);
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(181, 45);
+            this.trackBar2.TabIndex = 12;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll_1);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(421, 3);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(181, 45);
+            this.trackBar1.TabIndex = 11;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll_1);
+            // 
+            // picDrawingSurface
+            // 
+            this.picDrawingSurface.BackColor = System.Drawing.Color.White;
+            this.picDrawingSurface.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picDrawingSurface.Location = new System.Drawing.Point(114, 24);
+            this.picDrawingSurface.Name = "picDrawingSurface";
+            this.picDrawingSurface.Size = new System.Drawing.Size(706, 410);
+            this.picDrawingSurface.TabIndex = 12;
+            this.picDrawingSurface.TabStop = false;
             // 
             // toolStripButton1
             // 
@@ -153,31 +308,7 @@
             this.toolStripButton6.Name = "toolStripButton6";
             this.toolStripButton6.Size = new System.Drawing.Size(110, 80);
             this.toolStripButton6.Text = "toolStripButton5";
-            // 
-            // menuStrip2
-            // 
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem6,
-            this.toolStripMenuItem7,
-            this.toolStripMenuItem8});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(832, 24);
-            this.menuStrip2.TabIndex = 7;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.exitToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
-            this.toolStripMenuItem1.Text = "File";
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
             // newToolStripMenuItem
             // 
@@ -205,11 +336,6 @@
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(138, 6);
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Image = global::redactor_valjataga.Properties.Resources.exit;
@@ -217,23 +343,14 @@
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // toolStripMenuItem6
-            // 
-            this.toolStripMenuItem6.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.undoToolStripMenuItem,
-            this.renoToolStripMenuItem,
-            this.penToolStripMenuItem});
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(39, 20);
-            this.toolStripMenuItem6.Text = "Edit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Image = global::redactor_valjataga.Properties.Resources.back;
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.undoToolStripMenuItem.Text = "Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
@@ -243,7 +360,7 @@
             this.renoToolStripMenuItem.Name = "renoToolStripMenuItem";
             this.renoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.Z)));
-            this.renoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.renoToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.renoToolStripMenuItem.Text = "Redo";
             this.renoToolStripMenuItem.Click += new System.EventHandler(this.renoToolStripMenuItem_Click);
             // 
@@ -254,42 +371,49 @@
             this.colorToolStripMenuItem});
             this.penToolStripMenuItem.Image = global::redactor_valjataga.Properties.Resources.pen1;
             this.penToolStripMenuItem.Name = "penToolStripMenuItem";
-            this.penToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.penToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.penToolStripMenuItem.Text = "Pen";
+            // 
+            // styleToolStripMenuItem
+            // 
+            this.styleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.solidToolStripMenuItem,
+            this.dotToolStripMenuItem,
+            this.dashDotDotToolStripMenuItem});
+            this.styleToolStripMenuItem.Name = "styleToolStripMenuItem";
+            this.styleToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.styleToolStripMenuItem.Text = "Style";
+            // 
+            // solidToolStripMenuItem
+            // 
+            this.solidToolStripMenuItem.Checked = true;
+            this.solidToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.solidToolStripMenuItem.Name = "solidToolStripMenuItem";
+            this.solidToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.solidToolStripMenuItem.Text = "Solid";
+            this.solidToolStripMenuItem.Click += new System.EventHandler(this.solidToolStripMenuItem_Click);
+            // 
+            // dotToolStripMenuItem
+            // 
+            this.dotToolStripMenuItem.Name = "dotToolStripMenuItem";
+            this.dotToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.dotToolStripMenuItem.Text = "Dot";
+            this.dotToolStripMenuItem.Click += new System.EventHandler(this.dotToolStripMenuItem_Click);
+            // 
+            // dashDotDotToolStripMenuItem
+            // 
+            this.dashDotDotToolStripMenuItem.Name = "dashDotDotToolStripMenuItem";
+            this.dashDotDotToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.dashDotDotToolStripMenuItem.Text = "DashDotDot";
+            this.dashDotDotToolStripMenuItem.Click += new System.EventHandler(this.dashDotDotToolStripMenuItem_Click);
             // 
             // colorToolStripMenuItem
             // 
             this.colorToolStripMenuItem.Image = global::redactor_valjataga.Properties.Resources.Palette;
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.colorToolStripMenuItem.Text = "Color";
             this.colorToolStripMenuItem.Click += new System.EventHandler(this.colorToolStripMenuItem_Click_1);
-            // 
-            // toolStripMenuItem7
-            // 
-            this.toolStripMenuItem7.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(44, 20);
-            this.toolStripMenuItem7.Text = "Help";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // toolStripMenuItem8
-            // 
-            this.toolStripMenuItem8.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.squareToolStripMenuItem,
-            this.straightToolStripMenuItem,
-            this.penToolStripMenuItem1,
-            this.toolStripMenuItem9});
-            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(57, 20);
-            this.toolStripMenuItem8.Text = "Figures";
             // 
             // squareToolStripMenuItem
             // 
@@ -315,102 +439,18 @@
             this.penToolStripMenuItem1.Text = "Pen";
             this.penToolStripMenuItem1.Click += new System.EventHandler(this.penToolStripMenuItem1_Click);
             // 
-            // toolStripMenuItem9
-            // 
-            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(110, 22);
-            this.toolStripMenuItem9.Tag = "";
-            this.toolStripMenuItem9.Text = "Fill";
-            this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.trackBar2);
-            this.panel1.Controls.Add(this.trackBar1);
-            this.panel1.Location = new System.Drawing.Point(137, 446);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(672, 60);
-            this.panel1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "...";
-            // 
-            // trackBar2
-            // 
-            this.trackBar2.Location = new System.Drawing.Point(246, 8);
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(181, 45);
-            this.trackBar2.TabIndex = 12;
-            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll_1);
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(465, 12);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(181, 45);
-            this.trackBar1.TabIndex = 11;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll_1);
-            // 
-            // picDrawingSurface
-            // 
-            this.picDrawingSurface.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picDrawingSurface.Location = new System.Drawing.Point(137, 24);
-            this.picDrawingSurface.Name = "picDrawingSurface";
-            this.picDrawingSurface.Size = new System.Drawing.Size(672, 410);
-            this.picDrawingSurface.TabIndex = 12;
-            this.picDrawingSurface.TabStop = false;
-            // 
-            // solidToolStripMenuItem
-            // 
-            this.solidToolStripMenuItem.Checked = true;
-            this.solidToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.solidToolStripMenuItem.Name = "solidToolStripMenuItem";
-            this.solidToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.solidToolStripMenuItem.Text = "Solid";
-            this.solidToolStripMenuItem.Click += new System.EventHandler(this.solidToolStripMenuItem_Click);
-            // 
-            // dotToolStripMenuItem
-            // 
-            this.dotToolStripMenuItem.Name = "dotToolStripMenuItem";
-            this.dotToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dotToolStripMenuItem.Text = "Dot";
-            this.dotToolStripMenuItem.Click += new System.EventHandler(this.dotToolStripMenuItem_Click);
-            // 
-            // dashDotDotToolStripMenuItem
-            // 
-            this.dashDotDotToolStripMenuItem.Name = "dashDotDotToolStripMenuItem";
-            this.dashDotDotToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dashDotDotToolStripMenuItem.Text = "DashDotDot";
-            this.dashDotDotToolStripMenuItem.Click += new System.EventHandler(this.dashDotDotToolStripMenuItem_Click);
-            // 
-            // styleToolStripMenuItem
-            // 
-            this.styleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.solidToolStripMenuItem,
-            this.dotToolStripMenuItem,
-            this.dashDotDotToolStripMenuItem});
-            this.styleToolStripMenuItem.Name = "styleToolStripMenuItem";
-            this.styleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.styleToolStripMenuItem.Text = "Style";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(832, 518);
             this.Controls.Add(this.picDrawingSurface);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Paint";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -464,6 +504,9 @@
         private System.Windows.Forms.ToolStripMenuItem solidToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dotToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dashDotDotToolStripMenuItem;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

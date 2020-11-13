@@ -127,6 +127,9 @@
   <data name="kvadr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kvadr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Palette" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Palette.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="redo-arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redo-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,7 +154,7 @@
   <data name="pen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pen1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Palette" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Palette.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PL71482_12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PL71482_12.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -17,13 +17,13 @@ namespace redactor_valjataga
     {
         Image imgOriginal;
         bool drawing;
-        int historyCounter = 0;
+        int historyCounter = 0; //счетчик истории
 
         GraphicsPath currentPath;
         Point oldLocation;
         public static Pen currentPen;
-        Color historyColor;
-        List<Image> History;
+        Color historyColor;//сохранение текущего цвета перед использованием ластика
+        List<Image> History;//список для истории
         int X = 0;
         int Y = 0;
         int XO = 0;
@@ -38,7 +38,7 @@ namespace redactor_valjataga
             picDrawingSurface.MouseDown += PicDrawingSurface_MouseDown1;
             picDrawingSurface.MouseUp += PicDrawingSurface_MouseUp;
             picDrawingSurface.MouseMove += PicDrawingSurface_MouseMove;
-            History = new List<Image>();
+            History = new List<Image>();//инциализация списка для истории
             History.Add(new Bitmap(655, 416));
 
             trackBar2.Minimum = 0;
@@ -47,7 +47,7 @@ namespace redactor_valjataga
 
         private void PicDrawingSurface_MouseMove(object sender, MouseEventArgs e)
         {
-            
+            label1.Text = "x= " + e.X.ToString() + ", y= " + e.Y.ToString();
             if (drawing)
             {
                 if (figuri == 0)
@@ -61,7 +61,14 @@ namespace redactor_valjataga
                     picDrawingSurface.Invalidate();
 
                 }
-                
+                else
+                {
+                    X = oldLocation.X;
+                    Y = oldLocation.Y;
+                    XO = e.Location.X - oldLocation.X;
+                    YO = e.Location.Y - oldLocation.Y;
+                }
+
 
             }
 
@@ -149,6 +156,13 @@ namespace redactor_valjataga
                 drawing = true;
                 oldLocation = e.Location;
                 currentPath = new GraphicsPath();
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                drawing = true;
+                oldLocation = e.Location;
+                currentPath = new GraphicsPath();
+                currentPen.Color = Color.White;
             }
         }
 
@@ -245,6 +259,7 @@ namespace redactor_valjataga
             if (OP.ShowDialog() != DialogResult.Cancel)
                 picDrawingSurface.Load(OP.FileName);
 
+
             picDrawingSurface.AutoSize = true;
         }
 
@@ -324,7 +339,7 @@ namespace redactor_valjataga
 
         
 
-        private void trackBar2_Scroll_1(object sender, EventArgs e)
+        private void trackBar2_Scroll_1(object sender, EventArgs e)//лупа
         {
             picDrawingSurface.Image = Zoom(imgOriginal, trackBar2.Value);
         }
@@ -428,6 +443,32 @@ namespace redactor_valjataga
             solidToolStripMenuItem.Checked = false;
             dotToolStripMenuItem.Checked = false;
             dashDotDotToolStripMenuItem.Checked = true;
-        }*/
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            if (picDrawingSurface.Image != null)
+            {
+                var result = MessageBox.Show("Сохранить текущее изображение перед выходом?", "Передупреждение", MessageBoxButtons.YesNoCancel);
+
+                switch (result)
+                {
+                    case DialogResult.No: Application.Exit(); break;
+                    case DialogResult.Yes: SaveToolStripMenuItem_Click(sender, e); Application.Exit(); break;
+                    case DialogResult.Cancel: return;
+
+                }
+
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
