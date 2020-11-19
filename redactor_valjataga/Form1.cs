@@ -470,5 +470,10 @@ namespace redactor_valjataga
         {
             Application.Exit();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Информация о приложении и разработчике");
+        }
     }
 }
