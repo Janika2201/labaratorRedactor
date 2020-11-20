@@ -83,6 +83,16 @@ namespace redactor_valjataga.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgonline_com_ua_Resize_gbeJOa1dIJ44dzO {
+            get {
+                object obj = ResourceManager.GetObject("imgonline-com-ua-Resize-gbeJOa1dIJ44dzO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap krug {
             get {
                 object obj = ResourceManager.GetObject("krug", resourceCulture);
@@ -96,6 +106,16 @@ namespace redactor_valjataga.Properties {
         internal static System.Drawing.Bitmap kvadr {
             get {
                 object obj = ResourceManager.GetObject("kvadr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap neww {
+            get {
+                object obj = ResourceManager.GetObject("neww", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -78,6 +78,7 @@ namespace redactor_valjataga
         private void Button1_Click(object sender, EventArgs e)
         {
             Form1.currentPen.Color = colorResult;
+            Form1.historyColor = colorResult;
             Close();
         }
 

@@ -128,5 +128,11 @@
   <ItemGroup>
     <None Include="Resources\PL71482_12.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\neww.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgonline-com-ua-Resize-gbeJOa1dIJ44dzO.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

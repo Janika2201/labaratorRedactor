@@ -22,7 +22,7 @@ namespace redactor_valjataga
         GraphicsPath currentPath;
         Point oldLocation;
         public static Pen currentPen;
-        Color historyColor;//сохранение текущего цвета перед использованием ластика
+        public static Color historyColor = Color.Black;//сохранение текущего цвета перед использованием ластика
         List<Image> History;//список для истории
         int X = 0;
         int Y = 0;
@@ -34,12 +34,12 @@ namespace redactor_valjataga
             InitializeComponent();
             drawing = false; //переменная, отвественная за рисование
             currentPen = new Pen(Color.Black);// Инициализация пера с чёрным цветом
-            currentPen.Width = trackBar1.Value;
+            currentPen.Width = trackBar1.Value;//Инциализация толщины пера
             picDrawingSurface.MouseDown += PicDrawingSurface_MouseDown1;
             picDrawingSurface.MouseUp += PicDrawingSurface_MouseUp;
             picDrawingSurface.MouseMove += PicDrawingSurface_MouseMove;
             History = new List<Image>();//инциализация списка для истории
-            History.Add(new Bitmap(655, 416));
+            History.Add(new Bitmap(706 , 466));
 
             trackBar2.Minimum = 0;
             trackBar2.Maximum = 10;
@@ -156,6 +156,7 @@ namespace redactor_valjataga
                 drawing = true;
                 oldLocation = e.Location;
                 currentPath = new GraphicsPath();
+                currentPen.Color = historyColor;
             }
             if (e.Button == MouseButtons.Right)
             {
@@ -231,7 +232,7 @@ namespace redactor_valjataga
         {
             History.Clear();
             historyCounter = 0;
-            Bitmap pic = new Bitmap(655, 416);
+            Bitmap pic = new Bitmap(706, 466);
             picDrawingSurface.Image = pic;
             History.Add(new Bitmap(picDrawingSurface.Image));
 
@@ -473,7 +474,7 @@ namespace redactor_valjataga
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Информация о приложении и разработчике");
+            MessageBox.Show("Paint Janika Valjataga");
         }
     }
 }
