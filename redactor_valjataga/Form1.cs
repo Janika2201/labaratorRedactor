@@ -39,7 +39,7 @@ namespace redactor_valjataga
             picDrawingSurface.MouseUp += PicDrawingSurface_MouseUp;
             picDrawingSurface.MouseMove += PicDrawingSurface_MouseMove;
             History = new List<Image>();//инциализация списка для истории
-            History.Add(new Bitmap(706 , 466));
+            History.Add(new Bitmap(697, 462));
 
             trackBar2.Minimum = 0;
             trackBar2.Maximum = 10;
@@ -230,12 +230,6 @@ namespace redactor_valjataga
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)//создается новый файл 
         {
-            History.Clear();
-            historyCounter = 0;
-            Bitmap pic = new Bitmap(706, 466);
-            picDrawingSurface.Image = pic;
-            History.Add(new Bitmap(picDrawingSurface.Image));
-
             if (picDrawingSurface.Image != null)
             {
                 var result = MessageBox.Show("Сохранить текущее изображение перед созданием нового рисунка?", "Передупреждение", MessageBoxButtons.YesNoCancel);
@@ -248,6 +242,12 @@ namespace redactor_valjataga
                 }
 
             }
+            else
+            {
+                Bitmap pic = new Bitmap(697, 462);
+                picDrawingSurface.Image = pic;
+            }
+
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)//открывается папка в которой можно открыть любого формата картинку 
@@ -266,8 +266,7 @@ namespace redactor_valjataga
 
         private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
-            Bitmap pic = new Bitmap(655, 416);
-            picDrawingSurface.Image = pic;
+           
 
             if (picDrawingSurface.Image != null)
             {
@@ -280,6 +279,11 @@ namespace redactor_valjataga
                     case DialogResult.Cancel: return;
                 }
 
+            }
+            else
+            {
+                Bitmap pic = new Bitmap(655, 416);
+                picDrawingSurface.Image = pic;
             }
         }
 
@@ -475,6 +479,14 @@ namespace redactor_valjataga
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Paint Janika Valjataga");
+        }
+
+        private void picDrawingSurface_MouseDoubleClick(object sender, MouseEventArgs e)//отвечает за возвращение рисунка с помощью ctrl+z
+        {
+            Graphics g = Graphics.FromImage(picDrawingSurface.Image);
+            g.Clear(Color.White);
+            History.Add(new Bitmap(picDrawingSurface.Image));
+
         }
     }
 }

@@ -251,6 +251,7 @@
             this.picDrawingSurface.Size = new System.Drawing.Size(697, 462);
             this.picDrawingSurface.TabIndex = 12;
             this.picDrawingSurface.TabStop = false;
+            this.picDrawingSurface.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.picDrawingSurface_MouseDoubleClick);
             // 
             // toolStripButton1
             // 
