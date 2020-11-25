@@ -264,7 +264,7 @@ namespace redactor_valjataga
             picDrawingSurface.AutoSize = true;
         }
 
-        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        private void toolStripButton1_Click_1(object sender, EventArgs e)//отвечает за создание нового листа и если что-то нарисованно, то предлагает сохранить 
         {
            
 
@@ -287,40 +287,9 @@ namespace redactor_valjataga
             }
         }
 
-        private void toolStripButton3_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog SaveDlg = new SaveFileDialog();
-            SaveDlg.Filter = "JPEG Image|*.jpg|Bitmap Image|*.bmp|GIF Image|*.gif|PNG Image|*.png";
-            SaveDlg.Title = "Save an Image File";
-            SaveDlg.FilterIndex = 4;
+       
 
-            SaveDlg.ShowDialog();
-            if (SaveDlg.FileName != "")
-            {
-                System.IO.FileStream fsу = (System.IO.FileStream)SaveDlg.OpenFile();
-
-                switch (SaveDlg.FilterIndex)
-                {
-                    case 1:
-                        this.picDrawingSurface.Image.Save(fsу, ImageFormat.Jpeg);
-                        break;
-
-                    case 2:
-                        this.picDrawingSurface.Image.Save(fsу, ImageFormat.Bmp);
-                        break;
-                    case 3:
-                        this.picDrawingSurface.Image.Save(fsу, ImageFormat.Gif);
-                        break;
-                    case 4:
-                        this.picDrawingSurface.Image.Save(fsу, ImageFormat.Png);
-                        break;
-                }
-
-                fsу.Close();
-            }
-        }
-
-        private void toolStripButton4_Click(object sender, EventArgs e)
+        private void toolStripButton4_Click(object sender, EventArgs e)//отвечает за открытие  фото
         {
             OpenFileDialog OP = new OpenFileDialog();
             OP.Filter = "JPEG Image|*.jpg|Bitmap Image|*.bmp|GIF Image|*.gif|PNG Image|*.png";
@@ -333,7 +302,7 @@ namespace redactor_valjataga
             picDrawingSurface.AutoSize = true;
         }
 
-        private void toolStripButton5_Click(object sender, EventArgs e)
+        private void toolStripButton5_Click(object sender, EventArgs e)//отвечает за открытие второй формы
         {
             Form2 f = new Form2();
             f.Owner = this;
@@ -344,11 +313,11 @@ namespace redactor_valjataga
 
         
 
-        private void trackBar2_Scroll_1(object sender, EventArgs e)//лупа
+        private void trackBar2_Scroll_1(object sender, EventArgs e)//отвечает за приближения (лупа)
         {
             picDrawingSurface.Image = Zoom(imgOriginal, trackBar2.Value);
         }
-        
+        /*
         private void squareToolStripMenuItem_Click(object sender, EventArgs e)
         {
             currentPen.DashStyle = DashStyle.Solid;
@@ -391,9 +360,9 @@ namespace redactor_valjataga
 
             figuri = 4;
         }
-        
+        */
 
-        private void trackBar1_Scroll_1(object sender, EventArgs e)
+        private void trackBar1_Scroll_1(object sender, EventArgs e)//размер кисти 
         {
             currentPen.Width = trackBar1.Value;
         }
@@ -450,7 +419,7 @@ namespace redactor_valjataga
             dashDotDotToolStripMenuItem.Checked = true;
         }
 
-        private void toolStripButton6_Click(object sender, EventArgs e)
+        private void toolStripButton6_Click(object sender, EventArgs e)// отвечает за выход из рисовалки
         {
             if (picDrawingSurface.Image != null)
             {
@@ -487,6 +456,43 @@ namespace redactor_valjataga
             g.Clear(Color.White);
             History.Add(new Bitmap(picDrawingSurface.Image));
 
+        }
+
+        private void saveToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            SaveFileDialog SaveDlg = new SaveFileDialog();
+            SaveDlg.Filter = "JPEG Image|*.jpg|Bitmap Image|*.bmp|GIF Image|*.gif|PNG Image|*.png";
+            SaveDlg.Title = "Save an Image File";
+            SaveDlg.FilterIndex = 4;
+
+
+            SaveDlg.ShowDialog();
+            if (SaveDlg.FileName != "")
+            {
+                System.IO.FileStream fs = (System.IO.FileStream)SaveDlg.OpenFile();
+
+                switch (SaveDlg.FilterIndex)
+                {
+                    case 1:
+                        this.picDrawingSurface.Image.Save(fs, ImageFormat.Jpeg);
+                        break;
+
+                    case 2:
+                        this.picDrawingSurface.Image.Save(fs, ImageFormat.Bmp);
+                        break;
+                    case 3:
+                        this.picDrawingSurface.Image.Save(fs, ImageFormat.Gif);
+                        break;
+                    case 4:
+                        this.picDrawingSurface.Image.Save(fs, ImageFormat.Png);
+                        break;
+                }
+
+                fs.Close();
+            }
+            Graphics g = Graphics.FromImage(picDrawingSurface.Image);
+            g.Clear(Color.White);
+            g.DrawImage(picDrawingSurface.Image, 0, 0, 750, 500);
         }
     }
 }
