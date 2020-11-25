@@ -54,11 +54,6 @@
             this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
-            this.squareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.straightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.penToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -163,8 +158,7 @@
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.toolStripMenuItem6,
-            this.toolStripMenuItem7,
-            this.toolStripMenuItem8});
+            this.toolStripMenuItem7});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(888, 24);
@@ -320,49 +314,6 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem8
-            // 
-            this.toolStripMenuItem8.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.squareToolStripMenuItem,
-            this.straightToolStripMenuItem,
-            this.penToolStripMenuItem1,
-            this.toolStripMenuItem9});
-            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(57, 20);
-            this.toolStripMenuItem8.Text = "Figures";
-            // 
-            // squareToolStripMenuItem
-            // 
-            this.squareToolStripMenuItem.Image = global::redactor_valjataga.Properties.Resources.kvadr;
-            this.squareToolStripMenuItem.Name = "squareToolStripMenuItem";
-            this.squareToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.squareToolStripMenuItem.Text = "Square";
-            /*this.squareToolStripMenuItem.Click += new System.EventHandler(this.squareToolStripMenuItem_Click);*/
-            // 
-            // straightToolStripMenuItem
-            // 
-            this.straightToolStripMenuItem.Image = global::redactor_valjataga.Properties.Resources.krug;
-            this.straightToolStripMenuItem.Name = "straightToolStripMenuItem";
-            this.straightToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.straightToolStripMenuItem.Text = "Elipse";
-            /*this.straightToolStripMenuItem.Click += new System.EventHandler(this.straightToolStripMenuItem_Click);*/
-            // 
-            // penToolStripMenuItem1
-            // 
-            this.penToolStripMenuItem1.Image = global::redactor_valjataga.Properties.Resources.pen;
-            this.penToolStripMenuItem1.Name = "penToolStripMenuItem1";
-            this.penToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
-            this.penToolStripMenuItem1.Text = "Pen";
-            /*this.penToolStripMenuItem1.Click += new System.EventHandler(this.penToolStripMenuItem1_Click);*/
-            // 
-            // toolStripMenuItem9
-            // 
-            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(110, 22);
-            this.toolStripMenuItem9.Tag = "";
-            this.toolStripMenuItem9.Text = "Fill";
-            /*this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);*/
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
@@ -486,11 +437,6 @@
         private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
-        private System.Windows.Forms.ToolStripMenuItem squareToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem straightToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem penToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;

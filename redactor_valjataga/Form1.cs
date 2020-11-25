@@ -282,7 +282,7 @@ namespace redactor_valjataga
             }
             else
             {
-                Bitmap pic = new Bitmap(655, 416);
+                Bitmap pic = new Bitmap(697, 462);
                 picDrawingSurface.Image = pic;
             }
         }
