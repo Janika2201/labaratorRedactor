@@ -63,12 +63,20 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.randColors = new System.Windows.Forms.CheckBox();
+            this.randFreq = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.figuresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.squareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.straightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.penToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDrawingSurface)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.randFreq)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -158,7 +166,8 @@
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.toolStripMenuItem6,
-            this.toolStripMenuItem7});
+            this.toolStripMenuItem7,
+            this.figuresToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(888, 24);
@@ -317,6 +326,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.randFreq);
+            this.panel1.Controls.Add(this.randColors);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
@@ -333,7 +345,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.label3.Location = new System.Drawing.Point(211, 518);
+            this.label3.Location = new System.Drawing.Point(115, 518);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 16;
@@ -343,7 +355,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Location = new System.Drawing.Point(505, 518);
+            this.label2.Location = new System.Drawing.Point(595, 518);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 13;
@@ -379,7 +391,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(452, 486);
+            this.trackBar1.Location = new System.Drawing.Point(542, 486);
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(181, 45);
             this.trackBar1.TabIndex = 11;
@@ -387,11 +399,72 @@
             // 
             // trackBar2
             // 
-            this.trackBar2.Location = new System.Drawing.Point(141, 486);
+            this.trackBar2.Location = new System.Drawing.Point(76, 486);
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(181, 45);
             this.trackBar2.TabIndex = 12;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll_1);
+            // 
+            // randColors
+            // 
+            this.randColors.AutoSize = true;
+            this.randColors.Location = new System.Drawing.Point(374, 486);
+            this.randColors.Name = "randColors";
+            this.randColors.Size = new System.Drawing.Size(111, 17);
+            this.randColors.TabIndex = 17;
+            this.randColors.Text = "Рандомный цвет";
+            this.randColors.UseVisualStyleBackColor = true;
+            this.randColors.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // randFreq
+            // 
+            this.randFreq.Location = new System.Drawing.Point(374, 513);
+            this.randFreq.Name = "randFreq";
+            this.randFreq.Size = new System.Drawing.Size(120, 20);
+            this.randFreq.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(253, 515);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(115, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Частота случайности";
+            // 
+            // figuresToolStripMenuItem
+            // 
+            this.figuresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.squareToolStripMenuItem,
+            this.straightToolStripMenuItem,
+            this.penToolStripMenuItem1});
+            this.figuresToolStripMenuItem.Name = "figuresToolStripMenuItem";
+            this.figuresToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.figuresToolStripMenuItem.Text = "Figures";
+            // 
+            // squareToolStripMenuItem
+            // 
+            this.squareToolStripMenuItem.Image = global::redactor_valjataga.Properties.Resources.kvadr;
+            this.squareToolStripMenuItem.Name = "squareToolStripMenuItem";
+            this.squareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.squareToolStripMenuItem.Text = "квадрат";
+            this.squareToolStripMenuItem.Click += new System.EventHandler(this.squareToolStripMenuItem_Click_1);
+            // 
+            // straightToolStripMenuItem
+            // 
+            this.straightToolStripMenuItem.Image = global::redactor_valjataga.Properties.Resources.krug;
+            this.straightToolStripMenuItem.Name = "straightToolStripMenuItem";
+            this.straightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.straightToolStripMenuItem.Text = "круг";
+            this.straightToolStripMenuItem.Click += new System.EventHandler(this.straightToolStripMenuItem_Click_1);
+            // 
+            // penToolStripMenuItem1
+            // 
+            this.penToolStripMenuItem1.Image = global::redactor_valjataga.Properties.Resources.pen;
+            this.penToolStripMenuItem1.Name = "penToolStripMenuItem1";
+            this.penToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.penToolStripMenuItem1.Text = "ручка";
+            this.penToolStripMenuItem1.Click += new System.EventHandler(this.penToolStripMenuItem1_Click_1);
             // 
             // Form1
             // 
@@ -414,6 +487,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picDrawingSurface)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.randFreq)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,6 +529,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown randFreq;
+        private System.Windows.Forms.CheckBox randColors;
+        private System.Windows.Forms.ToolStripMenuItem figuresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem squareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem straightToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem penToolStripMenuItem1;
     }
 }
 

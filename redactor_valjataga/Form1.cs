@@ -23,6 +23,7 @@ namespace redactor_valjataga
         Point oldLocation;
         public static Pen currentPen;
         public static Color historyColor = Color.Black;//сохранение текущего цвета перед использованием ластика
+        Timer cyclee;
         List<Image> History;//список для истории
         int X = 0;//задаем переменые 
         int Y = 0;
@@ -40,6 +41,8 @@ namespace redactor_valjataga
             picDrawingSurface.MouseMove += PicDrawingSurface_MouseMove;
             History = new List<Image>();//инциализация списка для истории
             History.Add(new Bitmap(697, 462));
+            cyclee = new Timer();
+            cyclee.Start();
 
             trackBar2.Minimum = 0;
             trackBar2.Maximum = 10;
@@ -321,50 +324,8 @@ namespace redactor_valjataga
         {
             picDrawingSurface.Image = Zoom(imgOriginal, trackBar2.Value);
         }
-        /*
-        private void squareToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentPen.DashStyle = DashStyle.Solid;
-
-            solidToolStripMenuItem.Checked = false;
-            dotToolStripMenuItem.Checked = false;
-            dashDotDotToolStripMenuItem.Checked = true;
-            figuri = 1;
-        }
-
-        private void straightToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            currentPen.DashStyle = DashStyle.Solid;
-
-            solidToolStripMenuItem.Checked = false;
-            dotToolStripMenuItem.Checked = false;
-            dashDotDotToolStripMenuItem.Checked = true;
-            figuri = 2;
-        }
-
-        private void penToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            currentPen.DashStyle = DashStyle.Solid;
-
-            solidToolStripMenuItem.Checked = true;
-            dotToolStripMenuItem.Checked = false;
-            dashDotDotToolStripMenuItem.Checked = false;
-
-            figuri = 0;
-        }
-
-        private void toolStripMenuItem9_Click(object sender, EventArgs e)
-        {
-            currentPen.DashStyle = DashStyle.Solid;
-
-            solidToolStripMenuItem.Checked = true;
-            dotToolStripMenuItem.Checked = false;
-            dashDotDotToolStripMenuItem.Checked = false;
-
-
-            figuri = 4;
-        }
-        */
+       
+        
 
         private void trackBar1_Scroll_1(object sender, EventArgs e)//размер кисти 
         {
@@ -497,6 +458,74 @@ namespace redactor_valjataga
             Graphics g = Graphics.FromImage(picDrawingSurface.Image);
             g.Clear(Color.White);
             g.DrawImage(picDrawingSurface.Image, 0, 0, 750, 500);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (randColors.Checked == true)
+            {
+                cyclee.Interval = (int)Convert.ToDecimal(randFreq.Value);
+                cyclee.Enabled = true;
+                cyclee.Tick += Cyclee_Tick;
+
+
+            }
+            if (randColors.Checked == false)
+            {
+                cyclee.Enabled = false;
+
+            }
+        }
+
+        private void Cyclee_Tick(object sender, EventArgs e)
+        {
+            Random rainboow = new Random();
+            currentPen.Color = Color.FromArgb(rainboow.Next(255), rainboow.Next(255), rainboow.Next(255));
+            historyColor = currentPen.Color;
+            currentPath = new GraphicsPath();
+        }
+
+        private void squareToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            currentPen.DashStyle = DashStyle.Solid;
+
+            solidToolStripMenuItem.Checked = false;
+            dotToolStripMenuItem.Checked = false;
+            dashDotDotToolStripMenuItem.Checked = true;
+            figuri = 1;
+        }
+
+        private void straightToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            currentPen.DashStyle = DashStyle.Solid;
+
+            solidToolStripMenuItem.Checked = false;
+            dotToolStripMenuItem.Checked = false;
+            dashDotDotToolStripMenuItem.Checked = true;
+            figuri = 2;
+        }
+
+        private void penToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            currentPen.DashStyle = DashStyle.Solid;
+
+            solidToolStripMenuItem.Checked = true;
+            dotToolStripMenuItem.Checked = false;
+            dashDotDotToolStripMenuItem.Checked = false;
+
+            figuri = 0;
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            currentPen.DashStyle = DashStyle.Solid;
+
+            solidToolStripMenuItem.Checked = true;
+            dotToolStripMenuItem.Checked = false;
+            dashDotDotToolStripMenuItem.Checked = false;
+
+
+            figuri = 4;
         }
     }
 }
