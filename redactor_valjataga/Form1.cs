@@ -24,7 +24,7 @@ namespace redactor_valjataga
         public static Pen currentPen;
         public static Color historyColor = Color.Black;//сохранение текущего цвета перед использованием ластика
         List<Image> History;//список для истории
-        int X = 0;
+        int X = 0;//задаем переменые 
         int Y = 0;
         int XO = 0;
         int YO = 0;
@@ -47,7 +47,7 @@ namespace redactor_valjataga
 
         private void PicDrawingSurface_MouseMove(object sender, MouseEventArgs e)
         {
-            label1.Text = "x= " + e.X.ToString() + ", y= " + e.Y.ToString();
+            label1.Text = "x= " + e.X.ToString() + ", y= " + e.Y.ToString();//отвечает за кардинаты х и у которые обозначаны в левом углу 
             if (drawing)
             {
                 if (figuri == 0)
@@ -63,7 +63,7 @@ namespace redactor_valjataga
                 }
                 else
                 {
-                    X = oldLocation.X;
+                    X = oldLocation.X;//кардиныты
                     Y = oldLocation.Y;
                     XO = e.Location.X - oldLocation.X;
                     YO = e.Location.Y - oldLocation.Y;
@@ -240,6 +240,8 @@ namespace redactor_valjataga
                     case DialogResult.Yes: SaveToolStripMenuItem_Click(sender, e); break;
                     case DialogResult.Cancel: return;
                 }
+                Bitmap pic = new Bitmap(697, 462);
+                picDrawingSurface.Image = pic;
 
             }
             else
@@ -278,6 +280,8 @@ namespace redactor_valjataga
                     case DialogResult.Yes: SaveToolStripMenuItem_Click(sender, e); break;
                     case DialogResult.Cancel: return;
                 }
+                Bitmap pic = new Bitmap(697, 462);
+                picDrawingSurface.Image = pic;
 
             }
             else
