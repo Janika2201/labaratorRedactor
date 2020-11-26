@@ -58,25 +58,25 @@
             this.squareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.straightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.penToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.randFreq = new System.Windows.Forms.NumericUpDown();
             this.randColors = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.picDrawingSurface = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.picDrawingSurface = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.randFreq)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDrawingSurface)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDrawingSurface)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -123,6 +123,7 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(110, 80);
             this.toolStripButton3.Text = "toolStripButton2";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton4
             // 
@@ -337,7 +338,7 @@
             // 
             this.squareToolStripMenuItem.Image = global::redactor_valjataga.Properties.Resources.kvadr;
             this.squareToolStripMenuItem.Name = "squareToolStripMenuItem";
-            this.squareToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.squareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.squareToolStripMenuItem.Text = "квадрат";
             this.squareToolStripMenuItem.Click += new System.EventHandler(this.squareToolStripMenuItem_Click_1);
             // 
@@ -345,7 +346,7 @@
             // 
             this.straightToolStripMenuItem.Image = global::redactor_valjataga.Properties.Resources.krug;
             this.straightToolStripMenuItem.Name = "straightToolStripMenuItem";
-            this.straightToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.straightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.straightToolStripMenuItem.Text = "круг";
             this.straightToolStripMenuItem.Click += new System.EventHandler(this.straightToolStripMenuItem_Click_1);
             // 
@@ -353,36 +354,19 @@
             // 
             this.penToolStripMenuItem1.Image = global::redactor_valjataga.Properties.Resources.pen;
             this.penToolStripMenuItem1.Name = "penToolStripMenuItem1";
-            this.penToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
+            this.penToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.penToolStripMenuItem1.Text = "ручка";
             this.penToolStripMenuItem1.Click += new System.EventHandler(this.penToolStripMenuItem1_Click_1);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.randFreq);
-            this.panel1.Controls.Add(this.randColors);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.picDrawingSurface);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.trackBar1);
-            this.panel1.Controls.Add(this.trackBar2);
-            this.panel1.Location = new System.Drawing.Point(114, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(750, 542);
-            this.panel1.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(253, 515);
+            this.label5.Location = new System.Drawing.Point(367, 538);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(115, 13);
             this.label5.TabIndex = 19;
             this.label5.Text = "Частота случайности";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // randFreq
             // 
@@ -391,7 +375,7 @@
             0,
             0,
             0});
-            this.randFreq.Location = new System.Drawing.Point(374, 513);
+            this.randFreq.Location = new System.Drawing.Point(488, 531);
             this.randFreq.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -414,7 +398,7 @@
             // randColors
             // 
             this.randColors.AutoSize = true;
-            this.randColors.Location = new System.Drawing.Point(374, 486);
+            this.randColors.Location = new System.Drawing.Point(371, 506);
             this.randColors.Name = "randColors";
             this.randColors.Size = new System.Drawing.Size(111, 17);
             this.randColors.TabIndex = 17;
@@ -426,7 +410,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.label3.Location = new System.Drawing.Point(115, 518);
+            this.label3.Location = new System.Drawing.Point(212, 554);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 16;
@@ -436,11 +420,48 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Location = new System.Drawing.Point(595, 518);
+            this.label2.Location = new System.Drawing.Point(692, 561);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 13;
             this.label2.Text = "Размер кисти";
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(640, 506);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(181, 45);
+            this.trackBar1.TabIndex = 11;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll_1);
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(140, 506);
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(181, 45);
+            this.trackBar2.TabIndex = 12;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(114, 554);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "...";
+            // 
+            // picDrawingSurface
+            // 
+            this.picDrawingSurface.BackColor = System.Drawing.Color.White;
+            this.picDrawingSurface.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picDrawingSurface.Location = new System.Drawing.Point(0, 0);
+            this.picDrawingSurface.Name = "picDrawingSurface";
+            this.picDrawingSurface.Size = new System.Drawing.Size(697, 462);
+            this.picDrawingSurface.TabIndex = 12;
+            this.picDrawingSurface.TabStop = false;
+            this.picDrawingSurface.MouseClick += new System.Windows.Forms.MouseEventHandler(this.picDrawingSurface_MouseClick);
+            this.picDrawingSurface.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.picDrawingSurface_MouseDoubleClick);
             // 
             // label4
             // 
@@ -450,41 +471,17 @@
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 15;
             // 
-            // picDrawingSurface
+            // panel1
             // 
-            this.picDrawingSurface.BackColor = System.Drawing.Color.White;
-            this.picDrawingSurface.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picDrawingSurface.Location = new System.Drawing.Point(26, 18);
-            this.picDrawingSurface.Name = "picDrawingSurface";
-            this.picDrawingSurface.Size = new System.Drawing.Size(697, 462);
-            this.picDrawingSurface.TabIndex = 12;
-            this.picDrawingSurface.TabStop = false;
-            this.picDrawingSurface.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.picDrawingSurface_MouseDoubleClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 504);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "...";
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(542, 486);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(181, 45);
-            this.trackBar1.TabIndex = 11;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll_1);
-            // 
-            // trackBar2
-            // 
-            this.trackBar2.Location = new System.Drawing.Point(76, 486);
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(181, 45);
-            this.trackBar2.TabIndex = 12;
-            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll_1);
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.picDrawingSurface);
+            this.panel1.Location = new System.Drawing.Point(114, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(724, 462);
+            this.panel1.TabIndex = 11;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Form1
             // 
@@ -492,6 +489,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(888, 593);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.trackBar2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.randFreq);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.randColors);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip2);
@@ -502,12 +507,12 @@
             this.toolStrip1.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.randFreq)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDrawingSurface)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDrawingSurface)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -536,17 +541,13 @@
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TrackBar trackBar1;
-        public System.Windows.Forms.PictureBox picDrawingSurface;
         private System.Windows.Forms.TrackBar trackBar2;
-        private System.Windows.Forms.Label label1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem styleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem solidToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dotToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dashDotDotToolStripMenuItem;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
@@ -556,6 +557,10 @@
         private System.Windows.Forms.ToolStripMenuItem squareToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem straightToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem penToolStripMenuItem1;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.PictureBox picDrawingSurface;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

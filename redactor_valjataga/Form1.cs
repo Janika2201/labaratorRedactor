@@ -79,69 +79,52 @@ namespace redactor_valjataga
 
         private void PicDrawingSurface_MouseUp(object sender, MouseEventArgs e)
         {
+            if (figuri == 1) //Drawing square
+            {
+                Graphics g = Graphics.FromImage(picDrawingSurface.Image);
+                Rectangle rect = new Rectangle(X, Y, XO, YO);
+                currentPath.AddRectangle(rect);
+                g.DrawPath(currentPen, currentPath);
+                oldLocation = e.Location;
+                g.Dispose();
+                picDrawingSurface.Invalidate();
+            }
+
+
+
+            if (figuri == 2) //drawing circle
+            {
+                Graphics g = Graphics.FromImage(picDrawingSurface.Image);
+                Rectangle circ = new Rectangle(X, Y, XO, YO);
+                currentPath.AddEllipse(circ);
+                g.DrawPath(currentPen, currentPath);
+                g.Dispose();
+                picDrawingSurface.Invalidate();
+            }
             if (figuri == 0)
             {
-                Graphics g = Graphics.FromImage(picDrawingSurface.Image);
+                currentPath = new GraphicsPath();
+                currentPath.Dispose();
+            }
 
-                currentPath.AddLine(oldLocation, e.Location);
-                g.DrawPath(currentPen, currentPath);
-                oldLocation = e.Location;
-                g.Dispose();
-                picDrawingSurface.Invalidate();
 
-            }
-            if (figuri == 2)
-            {
-                Graphics g = Graphics.FromImage(picDrawingSurface.Image);
-                Rectangle pathRect2 = new Rectangle(X, Y, XO, YO);
-                currentPath.AddEllipse(pathRect2);
-                g.DrawPath(currentPen, currentPath);
-                oldLocation = e.Location;
-                g.Dispose();
-                picDrawingSurface.Invalidate();
-            }
-            if (figuri == 3)
-            {
-                Graphics g = Graphics.FromImage(picDrawingSurface.Image);
-                Rectangle pathRect3 = new Rectangle(X, Y, XO, YO);
-                currentPath.AddEllipse(pathRect3);
-                g.DrawPath(currentPen, currentPath);
-                oldLocation = e.Location;
-                g.Dispose();
-                picDrawingSurface.Invalidate();
-            }
-            if (figuri == 4)
-            {
-                Graphics g = Graphics.FromImage(picDrawingSurface.Image);
-                Rectangle pathRect3 = new Rectangle(X, Y, XO, YO);
-                currentPath.AddRectangle(pathRect3);
-                g.DrawPath(currentPen, currentPath);
-                oldLocation = e.Location;
-                g.Dispose();
-                picDrawingSurface.Invalidate();
 
-            }
-            else
-            {
-                Graphics g = Graphics.FromImage(picDrawingSurface.Image);
-                Rectangle pathRect = new Rectangle(X, Y, XO, YO);
-                currentPath.AddRectangle(pathRect);
-                g.DrawPath(currentPen, currentPath);
-                oldLocation = e.Location;
-                g.Dispose();
-                picDrawingSurface.Invalidate();
 
-            }
+            //Removing unnecessary history
             History.RemoveRange(historyCounter + 1, History.Count - historyCounter - 1);
             History.Add(new Bitmap(picDrawingSurface.Image));
             if (historyCounter + 1 < 10) historyCounter++;
             if (History.Count - 1 == 10) History.RemoveAt(0);
             drawing = false;
+
             try
             {
+                currentPath = new GraphicsPath();
                 currentPath.Dispose();
             }
             catch { };
+
+            currentPen.Color = historyColor;
             imgOriginal = picDrawingSurface.Image;
         }
 
@@ -154,6 +137,7 @@ namespace redactor_valjataga
                 MessageBox.Show("Сначала создайте новый файл!");
                 return;
             }
+
             if (e.Button == MouseButtons.Left)
             {
                 drawing = true;
@@ -163,25 +147,14 @@ namespace redactor_valjataga
             }
             if (e.Button == MouseButtons.Right)
             {
-                if (cyclee.Enabled == true)
-                {
-                    cyclee.Enabled = false;
-                    historyColor = currentPen.Color;
-                    currentPen.Color = Color.White;
-                    drawing = true;
-                    oldLocation = e.Location;
-                    currentPath = new GraphicsPath();
-                }
-                else
-                {
-                    historyColor = currentPen.Color;
-                    currentPen.Color = Color.White;
-                    drawing = true;
-                    oldLocation = e.Location;
-                    currentPath = new GraphicsPath();
-                }
+                drawing = true;
+                oldLocation = e.Location;
+                currentPath = new GraphicsPath();
+                currentPen.DashStyle = DashStyle.Solid;
+                currentPen.Color = Color.White;
             }
         }
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -425,14 +398,23 @@ namespace redactor_valjataga
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Paint Janika Valjataga");
+            MessageBox.Show("Paint Janika Valjataga, Rostislav Konovalov");
         }
 
         private void picDrawingSurface_MouseDoubleClick(object sender, MouseEventArgs e)//отвечает за возвращение рисунка с помощью ctrl+z
         {
             Graphics g = Graphics.FromImage(picDrawingSurface.Image);
-            g.Clear(Color.White);
-            History.Add(new Bitmap(picDrawingSurface.Image));
+      
+            if (e.Button == MouseButtons.Left)
+            {
+                g.Clear(historyColor);
+                History.Add(new Bitmap(picDrawingSurface.Image));
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                g.Clear(Color.White);
+                History.Add(new Bitmap(picDrawingSurface.Image));
+            }
 
         }
 
@@ -500,45 +482,38 @@ namespace redactor_valjataga
 
         private void squareToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            currentPen.DashStyle = DashStyle.Solid;
-
-            solidToolStripMenuItem.Checked = false;
-            dotToolStripMenuItem.Checked = false;
-            dashDotDotToolStripMenuItem.Checked = true;
             figuri = 1;
         }
 
         private void straightToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            currentPen.DashStyle = DashStyle.Solid;
-
-            solidToolStripMenuItem.Checked = false;
-            dotToolStripMenuItem.Checked = false;
-            dashDotDotToolStripMenuItem.Checked = true;
+        {            
             figuri = 2;
         }
 
         private void penToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
-            currentPen.DashStyle = DashStyle.Solid;
-
-            solidToolStripMenuItem.Checked = true;
-            dotToolStripMenuItem.Checked = false;
-            dashDotDotToolStripMenuItem.Checked = false;
 
             figuri = 0;
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
-            currentPen.DashStyle = DashStyle.Solid;
 
-            solidToolStripMenuItem.Checked = true;
-            dotToolStripMenuItem.Checked = false;
-            dashDotDotToolStripMenuItem.Checked = false;
+        }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
-            figuri = 4;
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            saveToolStripMenuItem_Click_1(sender, e);
+        }
+
+        private void picDrawingSurface_MouseClick(object sender, MouseEventArgs e)
+        {
+           
         }
     }
 }
