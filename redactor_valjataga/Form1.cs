@@ -163,10 +163,23 @@ namespace redactor_valjataga
             }
             if (e.Button == MouseButtons.Right)
             {
-                drawing = true;
-                oldLocation = e.Location;
-                currentPath = new GraphicsPath();
-                currentPen.Color = Color.White;
+                if (cyclee.Enabled == true)
+                {
+                    cyclee.Enabled = false;
+                    historyColor = currentPen.Color;
+                    currentPen.Color = Color.White;
+                    drawing = true;
+                    oldLocation = e.Location;
+                    currentPath = new GraphicsPath();
+                }
+                else
+                {
+                    historyColor = currentPen.Color;
+                    currentPen.Color = Color.White;
+                    drawing = true;
+                    oldLocation = e.Location;
+                    currentPath = new GraphicsPath();
+                }
             }
         }
 
